@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-prettier/recommended",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "rules": {
+    "selector-class-pattern": null,
+    "max-nesting-depth": 10
+  }
+}
