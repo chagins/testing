@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { App } from './App';
 
 describe('"TOBE" tests', () => {
@@ -43,5 +44,31 @@ describe('"FIND BY" tests', () => {
     expect(dataElement).toBeInTheDocument();
     expect(dataElement).toHaveStyle({ color: 'red' });
     // screen.debug();
+  });
+});
+
+describe('"EVENT" tests', () => {
+  test('click event', async () => {
+    render(<App />);
+    const btnToggle = screen.getByTestId('toggle-btn');
+    expect(btnToggle).toBeInTheDocument();
+    expect(screen.queryByTestId('toggled-element')).toBeNull();
+    fireEvent.click(btnToggle);
+    expect(screen.queryByTestId('toggled-element')).toBeInTheDocument();
+    fireEvent.click(btnToggle);
+    expect(screen.queryByTestId('toggled-element')).toBeNull();
+  });
+
+  test('input event', async () => {
+    render(<App />);
+    const input = screen.getByPlaceholderText(/^(input value)/i);
+    expect(input).toBeInTheDocument();
+    expect(screen.queryByTestId('value-element')).toContainHTML('');
+    // искуственное событие
+    // fireEvent.input(input, {
+    //   target: { value: '123123' },
+    // });
+    await userEvent.type(input, '123123');
+    expect(screen.queryByTestId('value-element')).toContainHTML('123123');
   });
 });
