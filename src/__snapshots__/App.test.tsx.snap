@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`"TOBE" tests Render "input" 1`] = `
+<input
+  placeholder="input value..."
+  type="text"
+/>
+`;
+
 exports[`Render App tests Render "input" 1`] = `
 <input
   placeholder="input value..."

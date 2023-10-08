@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { App } from './App';
 
-describe('Render App tests', () => {
+describe('"TOBE" tests', () => {
   test('Render "Hello world"', () => {
     render(<App />);
     const helloElement = screen.getByText(/Hello world/i);
@@ -24,5 +24,24 @@ describe('Render App tests', () => {
   test('screen debug', () => {
     render(<App />);
     screen.debug();
+  });
+});
+
+describe('"QUERY BY" tests', () => {
+  test('nonexistent element', () => {
+    render(<App />);
+    const nonexistentElement = screen.queryByText(/nonexistent/i);
+    expect(nonexistentElement).toBeNull();
+  });
+});
+
+describe('"FIND BY" tests', () => {
+  test('async element', async () => {
+    render(<App />);
+    // screen.debug();
+    const dataElement = await screen.findByText(/data/i);
+    expect(dataElement).toBeInTheDocument();
+    expect(dataElement).toHaveStyle({ color: 'red' });
+    // screen.debug();
   });
 });
