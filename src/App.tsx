@@ -1,11 +1,9 @@
 export const App = () => {
   return (
     <div>
-      <ul>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-      </ul>
+      <h1>Hello world</h1>
+      <button type="button">click me</button>
+      <input type="text" placeholder="input value..." />
     </div>
   );
 };
