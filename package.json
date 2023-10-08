@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/chagins/testing#readme",
   "dependencies": {
+    "axios": "^1.5.1",
     "jest": "^29.7.0"
   }
 }
