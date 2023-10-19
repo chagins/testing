@@ -4,12 +4,6 @@ exports[`"TOBE" tests Render "input" 1`] = `
 <input
   placeholder="input value..."
   type="text"
-/>
-`;
-
-exports[`Render App tests Render "input" 1`] = `
-<input
-  placeholder="input value..."
-  type="text"
+  value=""
 />
 `;
