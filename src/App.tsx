@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AppRouter } from 'pages/AppRouter';
 
 export const App = () => {
-  return <div>Hello world</div>;
+  return <AppRouter />;
 };
