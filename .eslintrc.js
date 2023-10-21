@@ -18,7 +18,6 @@ module.exports = {
     'prettier',
   ],
   root: true,
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -50,4 +49,12 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     'no-underscore-dangle': 'off',
   },
+  overrides: [
+    {
+      // feel free to replace with your preferred file pattern - eg. 'src/**/*Slice.ts'
+      files: ['src/**/*.slice.ts'],
+      // avoid state param assignment
+      rules: { 'no-param-reassign': ['error', { props: false }] },
+    },
+  ],
 };
