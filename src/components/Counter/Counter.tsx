@@ -16,11 +16,11 @@ export const Counter = () => {
 
   return (
     <div>
-      <h1>value = {value}</h1>
-      <button type="button" onClick={onIncrement}>
+      <h1 data-testid="value-title">{value}</h1>
+      <button type="button" onClick={onIncrement} data-testid="increment-btn">
         increment
       </button>
-      <button type="button" onClick={onDecrement}>
+      <button type="button" onClick={onDecrement} data-testid="decrement-btn">
         decrement
       </button>
     </div>
