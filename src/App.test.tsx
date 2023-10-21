@@ -1,15 +1,12 @@
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from 'tests/helpers';
 import { App } from './App';
 
 describe('App tests', () => {
   test('Router correct', async () => {
-    render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
-    );
+    renderWithProviders({});
     const mainLink = screen.getByTestId('main-link');
     const aboutLink = screen.getByTestId('about-link');
     expect(mainLink).toBeInTheDocument();

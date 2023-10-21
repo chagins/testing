@@ -22,10 +22,10 @@ describe('"TOBE" tests', () => {
     expect(input).toMatchSnapshot();
   });
 
-  test('screen debug', () => {
-    render(<Simple />);
-    screen.debug();
-  });
+  // test('screen debug', () => {
+  //   render(<Simple />);
+  //   screen.debug();
+  // });
 });
 
 describe('"QUERY BY" tests', () => {

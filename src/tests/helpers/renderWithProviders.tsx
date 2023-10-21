@@ -2,8 +2,10 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { AppRouter } from 'pages/AppRouter';
 import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { store } from 'store';
 
-export const renderWithRouter = ({
+export const renderWithProviders = ({
   component = null,
   initialEntry = '/',
 }: {
@@ -11,9 +13,11 @@ export const renderWithRouter = ({
   initialEntry?: string;
 }) => {
   return render(
-    <MemoryRouter initialEntries={[initialEntry]}>
-      <AppRouter />
-      {component}
-    </MemoryRouter>
+    <Provider store={store}>
+      <MemoryRouter initialEntries={[initialEntry]}>
+        <AppRouter />
+        {component}
+      </MemoryRouter>
+    </Provider>
   );
 };

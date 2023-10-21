@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axios, { AxiosResponse, AxiosRequestHeaders } from 'axios';
 import { act } from 'react-dom/test-utils';
-import { renderWithRouter } from 'tests/helpers';
+import { renderWithProviders } from 'tests/helpers';
 import { User } from './types';
 
 jest.mock('axios');
@@ -40,7 +40,7 @@ describe('Users test', () => {
 
     mockedAxios.get.mockReturnValue(response);
 
-    await act(async () => renderWithRouter({ initialEntry: '/users' }));
+    await act(async () => renderWithProviders({ initialEntry: '/users' }));
   });
 
   test('users fetch', async () => {
