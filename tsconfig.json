@@ -121,6 +121,6 @@
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*", "config/**/*"],
+  "include": ["src/**/*", "config/**/*", ".storybook/**/*"],
   "exclude": ["build/**/*", "public/**/*"]
 }
